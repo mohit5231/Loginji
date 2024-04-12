@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #1832;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .facebook-icon {
+            color: #3b5998;
+        }
+
+        .twitter-icon {
+            color: #1da1f2;
+        }
+
+        .additional-options {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .additional-options a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+         <p>Language: 
+                <select>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                </select>
+            </p>
+        <img src="Logo.jpg" alt="Your Website Logo" width="100">
+        <h1>AK EDITZ</h1>
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username or Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="additional-options" align="right">
+            <p><a href="#">Forgotten your Password?</a></p>          
+        </div>
+            <button type="submit">Login</button>
+        </form>       
+       
+        <div class="additional-options">
+          
+            <p>Don't have an account?<a href="#"> Sign up</a></p>
+           
+        </div> <p>Or login with:</p>
+        <div class="social-icons">
+            <i class="fab fa-facebook-square facebook-icon"></i>
+            <i class="fab fa-twitter-square twitter-icon"></i>
+        </div>
+        
+    </div>
+    
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Define valid usernames and corresponding passwords
+            var users = {
+                "ak.editz_313_": "maharishi@1",
+                "shifa6969": "bhensdike",
+                "techno": "fuck"
+                // Add more usernames and passwords as needed
+            };
+
+            if (username === "" || password === "") {
+                alert("Please fill in both username/email and password fields.");
+                return false;
+            }
+
+            // Check if the entered username exists in the users object
+            if (!users.hasOwnProperty(username) || users[username] !== password) {
+                alert("Invalid username/email or password.");
+                return false;
+            }
+
+            // Uncomment the following line to submit the form
+            // document.getElementById("login-form").submit();
+
+            return true;
+        }
+    </script>
+</body>
+</html>
